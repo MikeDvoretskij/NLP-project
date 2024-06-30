@@ -1,0 +1,245 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Search documents</title>
+</head>
+
+<style>
+    body {
+        height: 100%;
+        background: black;
+        display: block
+    }
+
+    .header {
+        display: flex;
+        background-color: black;
+        height,
+        width: 100%
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: #00f2ff;
+    }
+
+    .company_name {
+        font-size: 38px
+    }
+
+    .company_name:hover {
+        color: #fff15a;
+    }
+
+    .w-dropdown-list {
+        display: none;
+    }
+
+    .body {
+        background-color: #1d1d1d;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .content {
+        padding-top: 1%;
+        display: block;
+    }
+
+    .search_div {
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .search_blok {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search_block {
+        display: flex;
+        border: 1px solid black;
+        width: 90%;
+        height: 5%;
+        margin: 0 auto;
+        padding: 5px;
+    }
+
+    .search_input {
+        flex: 1;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        padding: 5px;
+        background-color: transparent;
+        color: #000;
+    }
+
+    .search_input::placeholder {
+        color: #00f2ff;
+    }
+
+    .search_button {
+        background-color: blue;
+        color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px;
+        margin-left: 5px;
+    }
+
+    .table_div {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 1.5%;
+    }
+
+    .table {
+        display: flex;
+        justify-content: space-between;
+        width,
+        height: 100%;
+        background-color: transparent;
+        font-size: 20px;
+        padding: 0.5%;
+        align-items: center;
+
+    }
+
+    .score {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 7%;
+        background-color: #333;
+    }
+
+    .document_name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 31%;
+        background-color: #333;
+    }
+
+    .sentenceses {
+        display: flex;
+        width: 58%;
+        background-color: #333;
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #333;
+    }
+
+
+    .w-dropdown-list.active {
+        display: block;
+        background-color: #363636;
+    }
+
+    .heading-4 {
+        display: block;
+        color: #91ecfa;
+        text-align: left;
+    }
+
+    .dropdown-toggle-2 {
+        margin-left: 550%;
+    }
+
+    .dropdown-list-2,
+    .dropdown-toggle-2 {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <section class="header">
+        <div>
+            <a href="#">
+                <h1 class="company_name">Company name</h1>
+            </a>
+        </div>
+    </section>
+    <section class="body">
+        <div class="content">
+            <div class="search_div">
+                <div class="form-block w-form">
+                    <form name="search_form" method="post" class="form">
+                        <div class="search_block">
+                            <input class="search_input" name="search_input" placeholder="Text" type="text" />
+                            <button type="submit" , class="search_button">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="table_div">
+                <div class="table">
+                    <div class="score">
+                        <h3 class="colum_name">Score</h3>
+                    </div>
+                    <div class="document_name">
+                        <h3 class="colum_name">Document name</h3>
+                    </div>
+                    <div class="sentenceses">
+                        <h3 class="colum_name">Sentences</h3>
+                    </div>
+                    <div class="link">
+                        <h3 class="colum_name">Link</h3>
+                    </div>
+                </div>
+                <div class="table">
+                    <div class="score">
+                        <h3 class="colum_name">Score</h3>
+                    </div>
+                    <div class="document_name">
+                        <h3 class="colum_name">Document name</h3>
+                    </div>
+                    <div class="sentenceses">
+                        <div class="dropdown-2 w-dropdown">
+                            <div class="dropdown-toggle-2 w-dropdown-toggle">
+                                <h3 class="heading-3">Press</h3>
+                            </div>
+                            <nav class="dropdown-list-2 w-dropdown-list">
+                                <h4 class="heading-4">Some text</h4>
+                                <h4 class="heading-4">Some text</h4>
+                                <h4 class="heading-4">Some text</h4>
+                                <h4 class="heading-4">Some text</h4>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="link">
+                        <h3 class="colum_name">Link</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle-2');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const dropdownList = this.nextElementSibling;
+                    dropdownList.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body></html>
