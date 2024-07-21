@@ -1,9 +1,7 @@
 import time
 import pandas as pd
 from selenium.webdriver import Chrome, ChromeOptions
-
 from bs4 import BeautifulSoup
-import os
 
 data = pd.read_csv("../data/all_links.csv")
 data = data.loc[data["typeName"] == "Konstitusiya"].reset_index(drop=True)
@@ -61,4 +59,4 @@ def process(data:pd.DataFrame) -> dict:
     return result
 
 data = pd.DataFrame(process(data.loc[0]))
-data.to_csv("../data/constitution.csv", index=False, header=not os.path.exists("../data/constitution.csv"))
+data.to_csv("../data/constitution.csv", index=False)
